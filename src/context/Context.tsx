@@ -21,19 +21,19 @@ const DEFAULT_VALUE = {
 };
 
 //criando nosso contexto UserContext
-export const CambiosContext = createContext<PropsUserContext>(DEFAULT_VALUE);
+export const RecipesContext = createContext<PropsUserContext>(DEFAULT_VALUE);
 
-export const CambiosProvider: FC = ({ children }) => {
+export const RecipesProvider: FC = ({ children }) => {
   const [state, setState] = useState(DEFAULT_VALUE.state);
 
   return (
-    <CambiosContext.Provider
+    <RecipesContext.Provider
       value={{
         state,
         setState
       }}
     >
       {children}
-    </CambiosContext.Provider>
+    </RecipesContext.Provider>
   );
 };
